@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/post', [App\Http\Controllers\HomeController::class, 'index'])->name('post');
+Route::get('/table', [App\Http\Controllers\HomeController::class, 'tableBlog'])->name('table');
+Route::POST('/save-blog', [App\Http\Controllers\HomeController::class, 'save_blog'])->name('save-blog');
